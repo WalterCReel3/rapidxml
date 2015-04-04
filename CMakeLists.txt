@@ -3,8 +3,13 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
 PROJECT(RapidXML CXX)
 
-set(CMAKE_CXX_FLAGS "-Wall -Werror -std=c++11")
+if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+	set(CMAKE_CXX_FLAGS "-Wall -Werror -std=c++11")
+elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+	set(CMAKE_CXX_FLAGS "-Wall -Werror -std=c++11")
+endif()
 
+include(Dart)
 find_program(MEMORYCHECK_COMMAND valgrind)
 set(MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full")
 

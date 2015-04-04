@@ -189,7 +189,7 @@ int main(int argc, char * argv[]) {
         auto node = doc.first_node();
         std::cout << "<" << node->prefix() << ":" << node->name() << "/> " << node->xmlns() << std::endl;
         assert(std::string("single") == node->name());
-	std::cout << text << std::endl;
+        std::cout << text << std::endl;
         doc.validate();
         while (*text) {
             xml_document<> subdoc;
@@ -211,7 +211,7 @@ int main(int argc, char * argv[]) {
         auto node = doc.first_node();
         std::cout << "<" << node->prefix() << ":" << node->name() << "/> " << node->xmlns() << std::endl;
         assert(std::string("single") == std::string(node->name(), node->name_size()));
-	std::cout << text << std::endl;
+        std::cout << text << std::endl;
         doc.validate();
         while (*text) {
             xml_document<> subdoc;
