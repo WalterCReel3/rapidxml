@@ -1,4 +1,4 @@
-#include "rapidxml.hpp"
+#include <rapidxml/rapidxml.hpp>
 #include <string>
 #include <cassert>
 #include <iostream>
@@ -195,7 +195,7 @@ int main(int argc, char * argv[]) {
             xml_document<> subdoc;
             text = subdoc.parse<parse_parse_one>(text, doc);
             auto node = subdoc.first_node();
-            auto xmlns = node->xmlns();
+            // auto xmlns = node->xmlns();
             std::cout << "<" << node->name() << " xmlns='" << node->xmlns() << "'/>" << std::endl;
             subdoc.validate();
         }
